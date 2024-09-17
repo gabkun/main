@@ -23,12 +23,12 @@ const About = () => {
 
     <p class="text-black w-full sm:w-[35rem] md:w-[30rem] lg:w-[25rem] mb-10">
       I'm Gabriel, a 23-year-old College Student with a passion for web
-      development. My tech journey started with HTML, CSS, and JavaScript,
-      and I was hooked by the thrill of crafting dynamic, interactive
-      websites. As I grew, Node.js and ReactJS became my go-to tools for
-      building scalable applications. Feel free
-      to connect if you have questions, collaboration ideas, or just want to
-      discuss the latest in web development!
+      development. I'm a passionate and driven individual with hands-on experience in web development and project management. 
+      Currently, I'm working on a truck renting, selling, and buying e-commerce platform called Truck Hub, where 
+      I integrate advanced technologies to improve user experience. I have solid expertise in both frontend and backend development, 
+      utilizing tools such as React, MySQL, Nodemailer, and more.
+
+
     </p>
 
     <div id="social" class="flex flex-wrap justify-start items-center gap-4">
