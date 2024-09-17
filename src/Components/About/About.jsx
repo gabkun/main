@@ -40,10 +40,6 @@ const About = () => {
           <img class="mr-2 hover:scale-105 transition duration-300 ease-in-out" src="https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/linkedin.svg" width="20px" height="20px" alt="LinkedIn" />
           <span>Follow me on Linkedin</span>
       </a>
-      <a rel="noopener" target="_blank" href="https://twitter.com/ichbinaydin" class="bg-indigo-700 rounded-lg p-5 w-64 flex items-center gap-2 text-white">
-          <img class="mr-2 hover:scale-105 transition duration-300 ease-in-out" src="https://ucarecdn.com/82d7ca0a-c380-44c4-ba24-658723e2ab07/" width="20px" height="20px" alt="Twitter" />
-          <span>Follow me on Twitter</span>
-      </a>
   </div>
   
        
