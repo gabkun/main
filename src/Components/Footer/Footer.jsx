@@ -6,9 +6,9 @@ const Footer = () => {
       <div className="container mx-auto text-center">
         <p>&copy; 2024 MyPortfolio. All rights reserved.</p>
         <div className="mt-2">
-          <a href="https://linkedin.com" className="px-3">LinkedIn</a>
-          <a href="https://github.com" className="px-3">GitHub</a>
-          <a href="https://twitter.com" className="px-3">Twitter</a>
+          <a href="https://www.linkedin.com/in/gabriel-malanday-18619b178/" className="px-3">LinkedIn</a>
+          <a href="https://github.com/gabkun" className="px-3">GitHub</a>
+          <a href="https://twitter.com" className="px-3">Facebook</a>
         </div>
       </div>
     </footer>
