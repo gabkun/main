@@ -56,9 +56,7 @@ const Contact = () => {
                     <button type="submit" class="md:w-32 bg-black hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">
                         Submit
                     </button>
-                      <p class="leading-relaxed text-xl text-gray-900 mt-8">
-                We use VeilMail.io to <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://veilmail.io">hide email address from spammers</a>
-            </p>
+                      
                 </form>
             </div>
         </div>

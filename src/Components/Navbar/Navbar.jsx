@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from '../../Assets/logo.png'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,53 +8,53 @@ export default function Navbar() {
 
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
-
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
-            setShowNavbar(false);
-        } else {
-            setShowNavbar(true);
-        }
-
+        setShowNavbar(currentScrollY < lastScrollY || currentScrollY < 100);
         setLastScrollY(currentScrollY);
     };
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
 
     return (
-        <nav className={`bg-indigo-600 text-white shadow-md w-full fixed top-0 z-50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
+        <nav className={`backdrop-blur-md bg-white/80 shadow-lg fixed top-0 w-full z-50 transform transition-transform duration-500 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-                {/* LOGO */}
-                <div className="flex items-center">
-                    {/* Add your logo here */}
+                {/* Logo */}
+                <div className="text-xl font-bold text-gray-800 tracking-wider">
+                    <img className="h-20 w-30" src={logo} />
                 </div>
 
-                {/* Mobile Menu Button */}
+                {/* Hamburger */}
                 <div className="md:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-white focus:outline-none"
+                        className="focus:outline-none transition-transform duration-300 ease-in-out"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                            />
                         </svg>
                     </button>
                 </div>
 
-                {/* Navigation Links */}
-                <div className={`flex-1 justify-center items-center space-x-8 md:flex ${isOpen ? "block" : "hidden"} md:block`}>
-                    <a href="#" className="block text-lg hover:text-yellow-200 transition duration-300">Home</a>
-                    <a href="#about" className="block text-lg hover:text-yellow-200 transition duration-300">About</a>
-                    <a href="#works" className="block text-lg hover:text-yellow-200 transition duration-300">Works</a>
-                    <a href="#services" className="block text-lg hover:text-yellow-200 transition duration-300">Services</a>
-                    <a href="#contacts" className="block text-lg hover:text-yellow-200 transition duration-300">Contact</a>
+                {/* Links */}
+                <div className={`transition-all duration-500 ease-in-out md:flex md:items-center md:space-x-8 absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none md:pointer-events-auto"} md:opacity-100 md:translate-y-0 p-5 md:p-0`}>
+                    {["Home", "About", "Works", "Services", "Contact"].map((link) => (
+                        <a
+                            key={link}
+                            href={`#${link.toLowerCase()}`}
+                            className="block py-2 md:py-0 text-gray-700 text-lg font-medium hover:text-yellow-500 transition-all duration-300 transform hover:scale-105"
+                        >
+                            {link}
+                        </a>
+                    ))}
                 </div>
-                </div>
+            </div>
         </nav>
     );
 }
