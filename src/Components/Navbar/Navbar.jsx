@@ -3,26 +3,38 @@ import logo from '../../Assets/logo.png'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [showNavbar, setShowNavbar] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+const [showNavbar, setShowNavbar] = useState(true);
 
-    const handleScroll = () => {
-        const currentScrollY = window.scrollY;
-        setShowNavbar(currentScrollY < lastScrollY || currentScrollY < 100);
-        setLastScrollY(currentScrollY);
-    };
+        useEffect(() => {
+            let lastScrollY = window.scrollY;
 
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+            const handleScroll = () => {
+                const currentScrollY = window.scrollY;
+
+                setShowNavbar(
+                    currentScrollY < lastScrollY || currentScrollY < 100
+                );
+
+                lastScrollY = currentScrollY;
+            };
+
+            window.addEventListener("scroll", handleScroll);
+
+            return () => {
+                window.removeEventListener("scroll", handleScroll);
+            };
+        }, []);
 
     return (
         <nav className={`backdrop-blur-md bg-white/80 shadow-lg fixed top-0 w-full z-50 transform transition-transform duration-500 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="text-xl font-bold text-gray-800 tracking-wider">
-                    <img className="h-20 w-30" src={logo} />
+                    <img
+                    className="h-20 w-30"
+                    src={logo}
+                    alt="Gabriel Kun Portfolio Logo"
+                    />
                 </div>
 
                 {/* Hamburger */}
