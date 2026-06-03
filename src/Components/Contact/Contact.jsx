@@ -140,7 +140,7 @@ const Contact = () => {
                 </h3>
 
                 <p className="text-center text-indigo-100">
-                  Full Stack Developer | End User Support
+                  Full Stack Developer | End User Support Specialist
                 </p>
 
                 <div className="border-t border-white/30 my-6"></div>
