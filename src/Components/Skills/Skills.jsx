@@ -33,7 +33,7 @@ const projects = [
     image: project5,
     title: 'Canlandog Vaccination System',
     description: 'A freelance project used by health workers to vaccinate infants in Barangay Canlandog.',
-    liveLink: 'https://vax-brgy-fe.vercel.app/',
+    liveLink: 'https://canlandog-vaccination.infinityfreeapp.com/',
     githubLink: 'https://github.com/gabkun/vax-brgy-fe'
   },
   {
@@ -47,6 +47,13 @@ const projects = [
     image: project4,
     title: 'Promptly - Todo App',
     description: 'From my JSNAD DICT training — allows text and voice memo notes with a sleek UI.',
+    liveLink: 'https://promptly-dict-ncl9.vercel.app/',
+    githubLink: 'https://github.com/gabkun/promptly-dict'
+  },
+    {
+    image: project4,
+    title: 'Employee Management System - Thesis Proposal',
+    description: 'With Facial Recognition Feature',
     liveLink: 'https://promptly-dict-ncl9.vercel.app/',
     githubLink: 'https://github.com/gabkun/promptly-dict'
   }
